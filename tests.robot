@@ -9,7 +9,7 @@ ${name}  ahmad
 
 *** Test Cases ***
 Cout Number Of Existing
-    ${my_file}=  Get File  C:\\Users\\WaseemS\\Documents\\robot_test_1\\input.txt
+    ${my_file}=  Get File  .\\input.txt
     ${occurence}=  Get Count  ${my_file}  ${name}
     Should Be Equal As Strings  ${occurence}  3
 
