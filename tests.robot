@@ -1,15 +1,20 @@
 *** Settings ***
 Library  OperatingSystem
-Suite Setup  Log  Hello
-Suite Teardown  Log  bye
-Test Setup  Log  start of test
-Test Teardown  Log  end of test
+
 *** Variable ***
 ${name}  ahmad
 
 *** Test Cases ***
-Cout Number Of Existing
+Test Case 1
+    Expected Count Existing In File  .//input.txt  ${name}  3
+
+Test Case 2
+    Expected Count Existing In File  .//input.txt  waseem  2
+
+*** Keywords ***
+Expected Count Existing In File
+    [Arguments]  ${my_file}  ${name}  ${expected}
     ${my_file}=  Get File  .\\input.txt
     ${occurence}=  Get Count  ${my_file}  ${name}
-    Should Be Equal As Strings  ${occurence}  3
+    Should Be Equal As Strings  ${occurence}  ${expected}
 

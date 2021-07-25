@@ -1,73 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0.3 (Python 3.8.6 on win32)" generated="20210725 11:30:26.579" rpa="false" schemaversion="2">
-<suite id="s1" name="Tests" source="C:\Users\WaseemS\Documents\robot_test_1\tests.robot">
-<kw name="Log" library="BuiltIn" type="SETUP">
+<robot generator="Robot 4.0.3 (Python 3.8.6 on win32)" generated="20210725 12:44:53.311" rpa="false" schemaversion="2">
+<suite id="s1" name="Robot Test 1" source="C:\Users\WaseemS\Documents\robot_test_1">
+<kw name="Print Message" type="SETUP">
 <arg>Hello</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${message}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20210725 11:30:26.609" level="INFO">Hello</msg>
-<status status="PASS" starttime="20210725 11:30:26.609" endtime="20210725 11:30:26.610"/>
+<msg timestamp="20210725 12:44:53.342" level="INFO">Hello</msg>
+<status status="PASS" starttime="20210725 12:44:53.342" endtime="20210725 12:44:53.342"/>
 </kw>
-<test id="s1-t1" name="Cout Number Of Existing">
-<kw name="Log" library="BuiltIn" type="SETUP">
-<arg>start of test</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20210725 11:30:26.610" level="INFO">start of test</msg>
-<status status="PASS" starttime="20210725 11:30:26.610" endtime="20210725 11:30:26.610"/>
+<status status="PASS" starttime="20210725 12:44:53.342" endtime="20210725 12:44:53.342"/>
 </kw>
+<suite id="s1-s1" name="Tests" source="C:\Users\WaseemS\Documents\robot_test_1\tests.robot">
+<test id="s1-s1-t1" name="Test Case 1">
+<kw name="Expected Count Existing In File">
+<arg>.//input.txt</arg>
+<arg>${name}</arg>
+<arg>3</arg>
 <kw name="Get File" library="OperatingSystem">
 <var>${my_file}</var>
 <arg>.\\input.txt</arg>
 <doc>Returns the contents of a specified file.</doc>
-<msg timestamp="20210725 11:30:26.611" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\WaseemS\Documents\robot_test_1\input.txt"&gt;C:\Users\WaseemS\Documents\robot_test_1\input.txt&lt;/a&gt;'.</msg>
-<msg timestamp="20210725 11:30:26.611" level="INFO">${my_file} = hi there
+<msg timestamp="20210725 12:44:53.358" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\WaseemS\Documents\robot_test_1\input.txt"&gt;C:\Users\WaseemS\Documents\robot_test_1\input.txt&lt;/a&gt;'.</msg>
+<msg timestamp="20210725 12:44:53.358" level="INFO">${my_file} = hi there
 myu name is waseem ahmad sayara
 i like playing football with my friend ahmad
 my uncle name is ahmad and his son's name is also waseem
 </msg>
-<status status="PASS" starttime="20210725 11:30:26.611" endtime="20210725 11:30:26.611"/>
+<status status="PASS" starttime="20210725 12:44:53.358" endtime="20210725 12:44:53.358"/>
 </kw>
 <kw name="Get Count" library="BuiltIn">
 <var>${occurence}</var>
 <arg>${my_file}</arg>
 <arg>${name}</arg>
 <doc>Returns and logs how many times ``item`` is found from ``container``.</doc>
-<msg timestamp="20210725 11:30:26.612" level="INFO">Item found from container 3 times.</msg>
-<msg timestamp="20210725 11:30:26.612" level="INFO">${occurence} = 3</msg>
-<status status="PASS" starttime="20210725 11:30:26.611" endtime="20210725 11:30:26.612"/>
+<msg timestamp="20210725 12:44:53.358" level="INFO">Item found from container 3 times.</msg>
+<msg timestamp="20210725 12:44:53.358" level="INFO">${occurence} = 3</msg>
+<status status="PASS" starttime="20210725 12:44:53.358" endtime="20210725 12:44:53.358"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${occurence}</arg>
-<arg>3</arg>
+<arg>${expected}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20210725 11:30:26.612" level="INFO">Argument types are:
+<msg timestamp="20210725 12:44:53.358" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20210725 11:30:26.612" endtime="20210725 11:30:26.612"/>
+<status status="PASS" starttime="20210725 12:44:53.358" endtime="20210725 12:44:53.358"/>
 </kw>
-<kw name="Log" library="BuiltIn" type="TEARDOWN">
-<arg>end of test</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20210725 11:30:26.613" level="INFO">end of test</msg>
-<status status="PASS" starttime="20210725 11:30:26.613" endtime="20210725 11:30:26.613"/>
+<status status="PASS" starttime="20210725 12:44:53.342" endtime="20210725 12:44:53.358"/>
 </kw>
-<status status="PASS" starttime="20210725 11:30:26.610" endtime="20210725 11:30:26.613"/>
+<status status="PASS" starttime="20210725 12:44:53.342" endtime="20210725 12:44:53.358"/>
 </test>
-<kw name="Log" library="BuiltIn" type="TEARDOWN">
-<arg>bye</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20210725 11:30:26.615" level="INFO">bye</msg>
-<status status="PASS" starttime="20210725 11:30:26.615" endtime="20210725 11:30:26.615"/>
+<test id="s1-s1-t2" name="Test Case 2">
+<kw name="Expected Count Existing In File">
+<arg>.//input.txt</arg>
+<arg>waseem</arg>
+<arg>2</arg>
+<kw name="Get File" library="OperatingSystem">
+<var>${my_file}</var>
+<arg>.\\input.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20210725 12:44:53.358" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\WaseemS\Documents\robot_test_1\input.txt"&gt;C:\Users\WaseemS\Documents\robot_test_1\input.txt&lt;/a&gt;'.</msg>
+<msg timestamp="20210725 12:44:53.358" level="INFO">${my_file} = hi there
+myu name is waseem ahmad sayara
+i like playing football with my friend ahmad
+my uncle name is ahmad and his son's name is also waseem
+</msg>
+<status status="PASS" starttime="20210725 12:44:53.358" endtime="20210725 12:44:53.358"/>
 </kw>
-<status status="PASS" starttime="20210725 11:30:26.581" endtime="20210725 11:30:26.615"/>
+<kw name="Get Count" library="BuiltIn">
+<var>${occurence}</var>
+<arg>${my_file}</arg>
+<arg>${name}</arg>
+<doc>Returns and logs how many times ``item`` is found from ``container``.</doc>
+<msg timestamp="20210725 12:44:53.358" level="INFO">Item found from container 2 times.</msg>
+<msg timestamp="20210725 12:44:53.358" level="INFO">${occurence} = 2</msg>
+<status status="PASS" starttime="20210725 12:44:53.358" endtime="20210725 12:44:53.358"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${occurence}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20210725 12:44:53.358" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210725 12:44:53.358" endtime="20210725 12:44:53.358"/>
+</kw>
+<status status="PASS" starttime="20210725 12:44:53.358" endtime="20210725 12:44:53.358"/>
+</kw>
+<status status="PASS" starttime="20210725 12:44:53.358" endtime="20210725 12:44:53.358"/>
+</test>
+<status status="PASS" starttime="20210725 12:44:53.342" endtime="20210725 12:44:53.358"/>
+</suite>
+<kw name="Print Message" type="TEARDOWN">
+<arg>bye</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210725 12:44:53.358" level="INFO">bye</msg>
+<status status="PASS" starttime="20210725 12:44:53.358" endtime="20210725 12:44:53.358"/>
+</kw>
+<status status="PASS" starttime="20210725 12:44:53.358" endtime="20210725 12:44:53.358"/>
+</kw>
+<status status="PASS" starttime="20210725 12:44:53.311" endtime="20210725 12:44:53.358"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="Robot Test 1">Robot Test 1</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Tests">Robot Test 1.Tests</stat>
 </suite>
 </statistics>
 <errors>
